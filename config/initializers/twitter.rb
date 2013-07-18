@@ -1,7 +1,7 @@
 
   # This line loads the configuration from the .env file into the ENV hash
   # ENV values are accessible like ENV['CONSUMER_KEY']
-  Dotenv.load
+  #Dotenv.load
 
   # This block is where we're setting up our Twitter authentication
   Twitter.configure do |config|
