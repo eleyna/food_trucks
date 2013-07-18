@@ -9,21 +9,21 @@
 <body>
   <div class="page">
     <% if user_signed_in? %>
-    <ul class="center navbar">
-      <div class="navbar-inner">
-        <%= link_to "All Trucks", foodtrucks_path, class:"brand"%>
-        <%= link_to "Your Trucks", favorites_index_path, class:"brand" %>
-        <%= link_to "New Truck", foodtrucks_new_path, class:"brand" %>
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </div>
-    </ul>
+      <ul class="center navbar">
+        <div class="navbar-inner">
+          <%= link_to "All Trucks", foodtrucks_path, class:"brand"%>
+          <%= link_to "Your Trucks", favorites_index_path, class:"brand" %>
+          <%= link_to "New Truck", foodtrucks_new_path, class:"brand" %>
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </div>
+      </ul>
     <% end %>
-<div class ="main">
-  <ul class="hmenu">
-</ul>
-<%= yield %>
-</div>
-</div>
+  <div class ="main">
+    <ul class="hmenu">
+    </ul>
+    <%= yield %>
+  </div>
+  </div>
 </body>
 </html>

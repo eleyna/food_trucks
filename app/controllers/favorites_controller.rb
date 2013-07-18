@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 
-  # View a users favorite food trucks, their info
+  # View a user's favorite food trucks, their info
   # and recent tweets
   def index
     @user = User.find(current_user.id)
