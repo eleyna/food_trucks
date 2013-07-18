@@ -1,0 +1,15 @@
+<% @foodtrucks.each do |truck| %>
+  <h3 class="title"><%= truck.name %></h3>
+
+  Food Type: <%= truck.foodtype.name %><br>
+  Location: <%= truck.location.name %><br><br>
+
+  <% if @user.foodtrucks.include?(truck) %>
+    <%= button_to "Remove Favorite", favorite_path(id: truck.id, user: @user.id, remove: true), class:"btn btn-warning" %>
+  <% else %>
+    <%= button_to "Add Favorite", favorite_path(id: truck.id, user: @user.id), class:"btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Edit", edit_path(id: truck.id) %><br><br>
+
+<% end %>

@@ -1,0 +1,21 @@
+<form action="/foodtruck/<%= @foodtruck.id %>/edit" method="post">
+
+<input type="text" name="name" value="<%= @foodtruck.name %>"><br>
+<input type="text" name="handle" value="<%= @foodtruck.handle %>"><br>
+
+<select name ="location_id">
+  <% @locations.each do |location| %>
+    <option value="<%= location.id %>"><%= location.name %></option>
+  <% end %>
+</select><br>
+
+<select name ="foodtype_id">
+  <% @foodtypes.each do |foodtype| %>
+    <option value="<%= foodtype.id %>"><%= foodtype.name %></option>
+  <% end %>
+</select><br><br>
+
+<input type="hidden" name="_method" value="put">
+<button class="btn btn-primary">Submit</button>
+
+</form>

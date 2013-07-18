@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Truckz</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="page">
+    <ul class="center navbar">
+      <div class="navbar-inner">
+        <%= link_to "All Trucks", foodtrucks_path, class:"brand"%>
+        <%= link_to "Your Trucks", favorites_index_path, class:"brand" %>
+        <%= link_to "New Truck", foodtrucks_new_path, class:"brand" %>
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </div>
+    </ul>
+<div class ="main">
+  <ul class="hmenu">
+</ul>
+<%= yield %>
+</div>
+</div>
+</body>
+</html>

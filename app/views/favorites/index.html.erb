@@ -1,0 +1,12 @@
+<% @fave_trucks.each do |truck| %>
+  <h3 class="title"><%= truck.name %></h3>
+  <h4><%= truck.location.name %></h4>
+  <h4><%= truck.foodtype.name %></h4><br>
+  <% @tweets[truck.name][0..5].each do |tweet| %>
+    <p><%= tweet[:text] %></p>
+  <% end %><br><br>
+<% end %>
+
+
+
+
