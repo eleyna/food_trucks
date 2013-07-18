@@ -10,7 +10,8 @@
     <%= button_to "Add Favorite", favorite_path(id: truck.id, user: @user.id), class:"btn btn-primary" %>
   <% end %>
 
-  <%= link_to "Edit", edit_path(truck) %><br><br>
+  <%= link_to "Edit", edit_path(truck) %> |
+  <%= link_to "Delete", foodtruck_path(truck), :method => :delete %><br><br>
 
 <% end %>
 

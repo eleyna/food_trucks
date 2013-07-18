@@ -29,4 +29,9 @@ class FoodtrucksController < ApplicationController
     foodtruck.update_attributes(params[:foodtruck])
     redirect_to '/foodtrucks'
   end
+
+  def destroy
+    Foodtruck.destroy(params[:id])
+    redirect_to '/foodtrucks'
+  end
 end
