@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="page">
+    <% if user_signed_in? %>
     <ul class="center navbar">
       <div class="navbar-inner">
         <%= link_to "All Trucks", foodtrucks_path, class:"brand"%>
@@ -17,6 +18,7 @@
         <%= render 'devise/menu/login_items' %>
       </div>
     </ul>
+    <% end %>
 <div class ="main">
   <ul class="hmenu">
 </ul>
