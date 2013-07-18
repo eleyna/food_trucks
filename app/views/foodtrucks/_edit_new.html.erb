@@ -1,0 +1,9 @@
+<%= form_for @foodtruck do |f| %>
+
+  <%= f.text_field :name, :placeholder => 'Truck' %><br>
+  <%= f.text_field :handle, :placeholder => 'Twitter' %><br>
+  <%= f.collection_select :foodtype_id, Foodtype.all, :id, :name %><br>
+  <%= f.collection_select :location_id, Location.all, :id, :name %><br><br>
+  <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+
+<% end %>

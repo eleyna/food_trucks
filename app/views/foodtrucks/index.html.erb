@@ -10,6 +10,7 @@
     <%= button_to "Add Favorite", favorite_path(id: truck.id, user: @user.id), class:"btn btn-primary" %>
   <% end %>
 
-  <%= link_to "Edit", edit_path(id: truck.id) %><br><br>
+  <%= link_to "Edit", edit_path(truck) %><br><br>
 
 <% end %>
+

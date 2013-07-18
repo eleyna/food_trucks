@@ -9,30 +9,24 @@ class FoodtrucksController < ApplicationController
 
   # Show page to enter a new food truck
   def new
-    @locations = Location.all
-    @foodtypes = Foodtype.all
+    @foodtruck = Foodtruck.new
   end
 
   # Add the new food truck to the database
   def create
+    Foodtruck.create(params[:foodtruck])
     redirect_to '/foodtrucks'
   end
 
   # Show page to edit a food truck
   def edit
     @foodtruck = Foodtruck.find(params[:id])
-    @locations = Location.all
-    @foodtypes = Foodtype.all
   end
 
   # Update the food truck in the database
   def update
     foodtruck = Foodtruck.find(params[:id])
-    foodtruck.name = params[:name]
-    foodtruck.handle = params[:handle]
-    foodtruck.location = Location.find(params[:location_id])
-    foodtruck.foodtype = Foodtype.find(params[:foodtype_id])
-    foodtruck.save
+    foodtruck.update_attributes(params[:foodtruck])
     redirect_to '/foodtrucks'
   end
 end

@@ -3,5 +3,5 @@ class Foodtruck < ActiveRecord::Base
   has_many :users, :through => :favorites
   belongs_to :foodtype
   belongs_to :location
-  attr_accessible :name, :handle
+  attr_accessible :name, :handle, :foodtype_id, :location_id
 end
