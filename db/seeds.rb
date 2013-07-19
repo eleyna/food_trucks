@@ -9,7 +9,6 @@ Favorite.delete_all
 Foodtype.delete_all
 Foodtruck.delete_all
 Location.delete_all
-User.delete_all
 
 l1 = Location.create(name: "Inwood")
 l2 = Location.create(name: "Washington Heights")
@@ -52,9 +51,9 @@ f15 = Foodtype.create(name: "Vegetarian/Vegan")
 f16 = Foodtype.create(name: "Middle Eastern")
 f17 = Foodtype.create(name: "Latin American")
 
-ft1 = Foodtruck.create(name: "Taïm", handle: "@TaimMobile")
+ft1 = Foodtruck.create(name: "Taim", handle: "@TaimMobile")
 ft2 = Foodtruck.create(name: "Schnitzel & Things", handle: "@schnitznthings")
-ft3 = Foodtruck.create(name: "Nuchas", handle: "@NuchasNYC")
+t3 = Foodtruck.create(name: "Nuchas", handle: "@NuchasNYC")
 ft4 = Foodtruck.create(name: "Milk Truck", handle: "@milktrucknyc")
 ft5 = Foodtruck.create(name: "Sweetery", handle: "@SweeteryNYC")
 ft6 = Foodtruck.create(name: "Morris Grilled Cheese", handle: "@morristruck")
@@ -64,43 +63,5 @@ ft9 = Foodtruck.create(name: "Wafels & Dinges", handle: "@waffletruck")
 ft10 = Foodtruck.create(name: "Red Hook Lobster Pound", handle: "@Redhooklobster")
 ft11 = Foodtruck.create(name: "Calexico", handle: "@CalexicoNYC")
 ft12 = Foodtruck.create(name: "Van Leeuwen Artisan", handle: "@VLAIC")
-
-ft1.location = l20
-ft1.foodtype = f16
-ft2.location = l13
-ft2.foodtype = f13
-ft3.location = l15
-ft3.foodtype = f17
-ft4.location = l17
-ft4.foodtype = f10
-ft5.location = l7
-ft5.foodtype = f6
-ft6.location = l21
-ft6.foodtype = f10
-ft7.location = l19
-ft7.foodtype = f15
-ft8.location = l22
-ft8.foodtype = f8
-ft9.location = l5
-ft9.foodtype = f6
-ft10.location = l10
-ft10.foodtype = f7
-ft11.location = l14
-ft11.foodtype = f5
-ft12.location = l16
-ft12.foodtype = f8
-
-ft1.save
-ft2.save
-ft3.save
-ft4.save
-ft5.save
-ft6.save
-ft7.save
-ft8.save
-ft9.save
-ft10.save
-ft11.save
-ft12.save
 
 puts "All done"
