@@ -14,8 +14,13 @@ class FoodtrucksController < ApplicationController
 
   # Add the new food truck to the database
   def create
-    Foodtruck.create(params[:foodtruck])
-    redirect_to '/foodtrucks'
+    begin
+      Twitter.user_timeline(params[:foodtruck][:handle])
+      Foodtruck.create(params[:foodtruck])
+      redirect_to '/foodtrucks'
+    rescue
+      redirect_to '/foodtrucks/new'
+    end
   end
 
   # Show page to edit a food truck
@@ -25,11 +30,17 @@ class FoodtrucksController < ApplicationController
 
   # Update the food truck in the database
   def update
-    foodtruck = Foodtruck.find(params[:id])
-    foodtruck.update_attributes(params[:foodtruck])
-    redirect_to '/foodtrucks'
+    begin
+      Twitter.user_timeline(params[:foodtruck][:handle])
+      foodtruck = Foodtruck.find(params[:id])
+      foodtruck.update_attributes(params[:foodtruck])
+      redirect_to '/foodtrucks'
+    rescue
+        redirect_to "/foodtrucks/#{params[:id]}"
+    end
   end
 
+  # Remove a food truck from the database
   def destroy
     Foodtruck.destroy(params[:id])
     redirect_to '/foodtrucks'
